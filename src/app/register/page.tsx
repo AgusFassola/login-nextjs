@@ -1,11 +1,9 @@
 import React from 'react'
 
-function HomePage() {
+export default function RegisterPage() {
   return (
     <div>
-      HomePage
+      
     </div>
   )
 }
-
-export default HomePage
