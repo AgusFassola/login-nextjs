@@ -20,9 +20,13 @@ if(!password || password.length < 6){
     const user = await User.create({ email, fullname, password: hashedPassword  });
     if (!user) return NextResponse.json({message:"User creation failed"}, {status: 500});
     const userSaved= await user.save();
-    console.log("User created successfully:", userSaved);
 
-    return NextResponse.json({message: "User created successfully", user: userSaved }, {status: 201});
+    return NextResponse.json({message: "User created successfully",
+       user: { 
+          id: userSaved._id,
+          fullname: userSaved.fullname,
+          email: userSaved.email
+        } }, {status: 201});
 
   }catch(err) {
     console.error("Error creating user:", err);
