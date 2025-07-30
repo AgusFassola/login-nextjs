@@ -31,13 +31,13 @@ const handler = NextAuth({
     }),
   ], 
 
-    /* pages: {
+    pages: {
         signIn: '/login',
-        signOut: '/logout',
+        /* signOut: '/logout',
         error: '/error',
         verifyRequest: '/verify-request',
-        newUser: null // Will disable the new account creation screen
-    }, */
+        newUser: null // Will disable the new account creation screen */
+    },
     callbacks: {
         async jwt({ token, user }) {
             if (user) {

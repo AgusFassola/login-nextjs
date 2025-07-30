@@ -30,7 +30,7 @@ export default function RegisterPage() {
       });
       if (res?.ok) {
         console.log("Login successful:", res);
-        router.push('/dashboard');
+        router.push('/dashboard/profile');
       }
 
     } catch (error) {
@@ -43,12 +43,12 @@ export default function RegisterPage() {
   };
 
   return (
-    <div>
-      <form onSubmit={ handleSubmit } className='flex flex-col w-96 mx-auto mt-10'>
+    <div className='justify-center h-[calc(100vh-4rem)] flex items-center'>
+      <form onSubmit={ handleSubmit } className='flex flex-col w-96 mx-auto mt-10 bg-neutral-950'>
 
         {error && <p className='text-red-500'>{error}</p>}
 
-        <h1>Register</h1>
+        <h1 className='text-4xl font-bold mb-7'>Register</h1>
         <p>Register to create an account</p>
         <input type="text" placeholder='Agus' name='fullname' 
           className='bg-zinc-800 px-4 py-2 block mb-2' />
